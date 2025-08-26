@@ -1,0 +1,20 @@
+version: 1.0
+runtime: python3
+build:
+  commands:
+    build:
+      - echo "Installing dependencies..."
+      - pip install --upgrade pip
+      - pip install uv
+      - uv sync --frozen
+run:
+  runtime-version: 3.12
+  command: python main.py
+  network:
+    port: 8000
+    env: SERVER_PORT
+  env:
+    - name: SERVER_PORT
+      value: "8000"
+    - name: PYTHONUNBUFFERED
+      value: "1"
