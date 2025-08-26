@@ -8,8 +8,7 @@ build:
       - pip install uv
       - uv sync --frozen
 run:
-  runtime-version: 3.12
-  command: python main.py
+  command: uv run python main.py
   network:
     port: 8000
     env: SERVER_PORT
