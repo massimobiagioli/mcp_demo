@@ -1,6 +1,10 @@
+import os
 from fastmcp import FastMCP
 
-mcp = FastMCP("MCP Tester")
+SERVER_PORT = os.getenv("SERVER_PORT", 8000)
+
+
+mcp = FastMCP("MCP Tester", host="0.0.0.0", port=SERVER_PORT)
 
 
 @mcp.tool
